@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Build output (CI rebuilds on deploy)
+dist/
+
+# Vite
+.vite/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.*
+!.env.example
