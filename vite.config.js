@@ -1,13 +1,15 @@
 import { defineConfig } from "vite";
 
 /**
- * GitHub Pages project site: https://<user>.github.io/<repo>/
- *   → build with: VITE_BASE_PATH=/<repo>/ npm run build
- * Root user site (repo <user>.github.io): leave unset (defaults to "/").
+ * - Local dev: leave VITE_BASE_PATH unset (base "/").
+ * - GitHub Pages + custom domain: use "./" so assets resolve at site root (custom domain)
+ *   and under /repo/ (default github.io URL) — same build works for both.
+ * - Legacy: VITE_BASE_PATH=/<repo>/ only if you need absolute subpath (breaks custom domain root).
  */
 function viteBase() {
   const raw = process.env.VITE_BASE_PATH?.trim();
   if (!raw || raw === "/") return "/";
+  if (raw === "./" || raw === ".") return "./";
   const withLeading = raw.startsWith("/") ? raw : `/${raw}`;
   return withLeading.endsWith("/") ? withLeading : `${withLeading}/`;
 }

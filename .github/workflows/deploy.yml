@@ -34,7 +34,8 @@ jobs:
           if [ "$REPO" = "$OWNER.github.io" ]; then
             echo "path=/" >> "$GITHUB_OUTPUT"
           else
-            echo "path=/$REPO/" >> "$GITHUB_OUTPUT"
+            # Relative base: works at custom domain (/) and at user.github.io/<repo>/
+            echo "path=./" >> "$GITHUB_OUTPUT"
           fi
       - name: Build
         run: npm run build
