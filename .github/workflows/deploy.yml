@@ -41,6 +41,8 @@ jobs:
         run: npm run build
         env:
           VITE_BASE_PATH: ${{ steps.base.outputs.path }}
+          VITE_CONTACTS_WEB_APP_URL: ${{ secrets.VITE_CONTACTS_WEB_APP_URL }}
+          VITE_CONTACT_FORM_SECRET: ${{ secrets.VITE_CONTACT_FORM_SECRET }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

@@ -105,8 +105,8 @@
   <section class="works strip strip--white" id="work">
     <div class="works__inner">
       <div class="section-header section-header--works fade-up">
-        <a href="work.html" class="section-link">Full portfolio</a>
         <h2 class="section-title">Selected Works</h2>
+        <a href="work.html" class="section-link">Full portfolio</a>
       </div>
       <!-- Selected work thumbs: Unsplash (https://unsplash.com/license) — replace with your own stills when ready -->
       <div class="works__grid">
@@ -290,39 +290,45 @@
         <p class="contact__sub">Tell us about your project and we will follow up with next steps.</p>
       </div>
       <div class="contact__layout">
-        <form class="contact__form fade-up" id="contactForm" novalidate>
-          <div class="form-row">
-            <div class="form-field">
-              <label for="fname">Name</label>
-              <input type="text" id="fname" name="name" placeholder="Your name" autocomplete="name" required />
+        <form class="contact__form fade-up" id="contactForm" data-form-state="idle" novalidate>
+          <input type="text" name="website" id="contactWebsiteHp" class="form-hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <div class="contact__form-main" id="contactFormMain">
+            <div class="form-row">
+              <div class="form-field">
+                <label for="fname">Name</label>
+                <input type="text" id="fname" name="name" placeholder="Your name" autocomplete="name" required />
+              </div>
+              <div class="form-field">
+                <label for="femail">Email</label>
+                <input type="email" id="femail" name="email" placeholder="you@email.com" autocomplete="email" inputmode="email" required />
+              </div>
             </div>
             <div class="form-field">
-              <label for="femail">Email</label>
-              <input type="email" id="femail" name="email" placeholder="you@email.com" autocomplete="email" required />
+              <label for="ftype">Project type</label>
+              <select id="ftype" name="type">
+                <option value="">Select&hellip;</option>
+                <option>Commercial</option>
+                <option>Documentary</option>
+                <option>Brand film</option>
+                <option>Music video</option>
+                <option>Event</option>
+                <option>Other</option>
+              </select>
             </div>
+            <div class="form-field">
+              <label for="fmsg">Message</label>
+              <textarea id="fmsg" name="message" rows="5" placeholder="Timeline, goals, links to references&hellip;" required></textarea>
+            </div>
+            <button type="submit" class="btn-submit" id="submitBtn">
+              <span id="submitLabel">Send message</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M2 8h12M8 2l6 6-6 6"/>
+              </svg>
+            </button>
           </div>
-          <div class="form-field">
-            <label for="ftype">Project type</label>
-            <select id="ftype" name="type">
-              <option value="">Select&hellip;</option>
-              <option>Commercial</option>
-              <option>Documentary</option>
-              <option>Brand film</option>
-              <option>Music video</option>
-              <option>Event</option>
-              <option>Other</option>
-            </select>
+          <div class="contact__feedback" id="contactFeedback" role="status" aria-live="polite" aria-atomic="true" tabindex="-1" hidden>
+            <p class="contact__feedback-msg" id="contactFeedbackMsg"></p>
           </div>
-          <div class="form-field">
-            <label for="fmsg">Message</label>
-            <textarea id="fmsg" name="message" rows="5" placeholder="Timeline, goals, links to references&hellip;" required></textarea>
-          </div>
-          <button type="submit" class="btn-submit" id="submitBtn">
-            <span id="submitLabel">Send message</span>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M2 8h12M8 2l6 6-6 6"/>
-            </svg>
-          </button>
         </form>
         <aside class="contact__aside fade-up">
           <h3 class="contact__aside-title">Social</h3>
