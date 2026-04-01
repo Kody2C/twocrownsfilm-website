@@ -325,7 +325,7 @@ code {
 
 /* Scroll-parallax image grid behind CTA (We're ready when you are.) */
 .strip--cta-scroll {
-  --cta-band-h: clamp(6.5rem, 14vw, 8.75rem);
+  --cta-band-h: clamp(24rem, 52vw, 34rem);
   position: relative;
   overflow: hidden;
   background: #0a0a0a;
@@ -352,7 +352,7 @@ code {
   align-items: stretch;
   gap: 5px;
   /* Always wider than the viewport so thumbs cover edge-to-edge (no black on the right). */
-  width: max(280vw, 3200px);
+  width: max(400vw, 6400px);
   min-width: 100%;
   height: 100%;
   min-height: 100%;
@@ -360,7 +360,7 @@ code {
 }
 
 .cta-scroll-bg__track img {
-  width: clamp(96px, 11vw, 148px);
+  width: clamp(384px, 44vw, 592px);
   height: 100%;
   min-height: 100%;
   object-fit: cover;
@@ -422,7 +422,7 @@ code {
 
 @media (max-width: 520px) {
   .strip--cta-scroll {
-    --cta-band-h: clamp(8rem, 52vw, 11rem);
+    --cta-band-h: clamp(18rem, 85vw, 26rem);
   }
 }
 
@@ -431,7 +431,84 @@ code {
   border-top: 1px solid var(--border);
 }
 
-/* Overlapping split bar (floats over bottom of hero video + next section) */
+/* Centered “Let’s connect” card below hero */
+.strip--connect {
+  position: relative;
+  z-index: 30;
+  padding: clamp(2.5rem, 6vw, 4rem) var(--px) clamp(2.25rem, 5vw, 3.5rem);
+  background: var(--white);
+}
+
+.strip__inner--connect {
+  display: flex;
+  justify-content: center;
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.connect-card {
+  width: 100%;
+  max-width: 560px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-float);
+}
+
+.section-header--works {
+  flex-direction: row;
+}
+
+.section-header--works .section-title {
+  text-align: right;
+}
+
+@media (max-width: 520px) {
+  .section-header--works {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .section-header--works .section-title {
+    text-align: left;
+  }
+}
+
+.work-page {
+  padding: clamp(5.5rem, 12vw, 7rem) 0 var(--py);
+}
+
+.work-page__inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--px);
+}
+
+.work-page__header {
+  margin-bottom: 2.5rem;
+}
+
+.work-page__eyebrow {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+.work-page__lead {
+  margin-top: 0.75rem;
+  color: var(--muted);
+  max-width: 36rem;
+}
+
+.work-page__back {
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+}
+
+/* Overlapping split bar (legacy; kept for class reuse on cards) */
 .strip--split-overlap {
   position: relative;
   z-index: 30;

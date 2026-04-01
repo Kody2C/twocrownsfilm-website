@@ -46,7 +46,8 @@ document.addEventListener("keydown", (e) => {
 });
 
 function updateNavSolid() {
-  nav.classList.toggle("nav--solid", window.scrollY > 48);
+  const forceSolid = document.body.classList.contains("page-work");
+  nav.classList.toggle("nav--solid", forceSolid || window.scrollY > 48);
 }
 
 window.addEventListener("scroll", updateNavSolid, { passive: true });

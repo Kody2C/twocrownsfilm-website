@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
-  <script type="module" src="/src/main.js"></script>
+  <script type="module" src="./src/main.js"></script>
 </head>
 <body>
 
@@ -39,7 +39,7 @@
     <nav aria-label="Site navigation">
       <ul class="menu-links">
         <li style="--i:0"><a href="#about" class="menu-link">About</a></li>
-        <li style="--i:1"><a href="#work" class="menu-link">Work</a></li>
+        <li style="--i:1"><a href="work.html" class="menu-link">Work</a></li>
         <li style="--i:2"><a href="#contact" class="menu-link">Contact</a></li>
       </ul>
     </nav>
@@ -77,7 +77,7 @@
       </div>
     </div>
 
-    <a href="#split" class="hero__scroll" aria-label="Scroll to next section">
+    <a href="#connect" class="hero__scroll" aria-label="Scroll to next section">
       <span class="hero__scroll-label">Scroll</span>
       <svg width="20" height="28" viewBox="0 0 20 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <line x1="10" y1="2" x2="10" y2="24"/>
@@ -86,24 +86,12 @@
     </a>
   </header>
 
-  <section class="strip strip--split-overlap" id="split" aria-labelledby="split-heading">
-    <div class="strip__inner strip__inner--split split-bar">
-      <article class="split-card split-card--dark fade-up" aria-labelledby="split-heading">
-        <h2 id="split-heading" class="split-card__title">Our focus</h2>
-        <p class="split-card__text">
-          We take your story and carry it through production with clear narrative-led visuals, thoughtful pacing, and sound that supports the cut.
-        </p>
-        <a href="#about" class="split-card__link split-card__link--on-dark">
-          Read more
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M3 8h10M9 4l4 4-4 4"/>
-          </svg>
-        </a>
-      </article>
-      <article class="split-card split-card--media fade-up">
+  <section class="strip strip--connect" id="connect" aria-labelledby="connect-heading">
+    <div class="strip__inner strip__inner--connect">
+      <article class="connect-card split-card split-card--media fade-up" aria-labelledby="connect-heading">
         <div class="split-card__media-bg" aria-hidden="true"></div>
         <div class="split-card__media-inner">
-          <h2 class="split-card__title">Let&apos;s do this</h2>
+          <h2 id="connect-heading" class="split-card__title">Let&apos;s connect</h2>
           <p class="split-card__text">
             Share a brief, a timeline, or a link to references and we will follow up with next steps.
           </p>
@@ -115,9 +103,9 @@
 
   <section class="works strip strip--white" id="work">
     <div class="works__inner">
-      <div class="section-header fade-up">
+      <div class="section-header section-header--works fade-up">
+        <a href="work.html" class="section-link">Full portfolio</a>
         <h2 class="section-title">Selected Works</h2>
-        <a href="#contact" class="section-link">Start a project</a>
       </div>
       <!-- Selected work thumbs: Unsplash (https://unsplash.com/license) — replace with your own stills when ready -->
       <div class="works__grid">
@@ -213,9 +201,9 @@
       </div>
     </div>
 
-    <div class="about__process strip strip--process" aria-labelledby="process-heading">
+    <div class="about__process strip strip--process" id="what-we-do" aria-labelledby="process-heading">
       <div class="strip__inner">
-        <h3 id="process-heading" class="process__heading fade-up">Our Process</h3>
+        <h3 id="process-heading" class="process__heading fade-up">What we do</h3>
         <ol class="process-list">
           <li class="process-item fade-up">
             <div class="process-item__icon" aria-hidden="true">
@@ -389,7 +377,7 @@
         </div>
         <nav class="footer__nav" aria-label="Footer navigation">
           <a href="#about">About</a>
-          <a href="#work">Work</a>
+          <a href="work.html">Work</a>
         </nav>
       </div>
       <p class="footer__copy">&copy; <span id="year"></span> Two Crowns Film. All rights reserved.</p>
