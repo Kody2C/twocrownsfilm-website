@@ -10,7 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&display=swap" rel="stylesheet" />
-  <script type="module" src="./src/main.js"></script>
+  <!-- Link stylesheet in head so navigations paint styled; CSS was previously only imported from the deferred module. -->
+  <link rel="stylesheet" href="./src/style.css" />
 </head>
 <body>
 
@@ -174,6 +175,9 @@
           </div>
         </article>
       </div>
+      <p class="works__footer-cta fade-up">
+        <a href="work/" class="split-card__link">See the full portfolio<span aria-hidden="true"> →</span></a>
+      </p>
     </div>
   </section>
 
@@ -340,5 +344,6 @@
     </div>
   </footer>
 
+  <script type="module" src="./src/main.js"></script>
 </body>
 </html>

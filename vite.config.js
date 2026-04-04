@@ -18,10 +18,31 @@ function viteBase() {
   return withLeading.endsWith("/") ? withLeading : `${withLeading}/`;
 }
 
+/**
+ * Vite injects the entry module script before the extracted CSS <link> in <head>.
+ * That ordering can cause a flash of unstyled content on full-page navigations.
+ * Move the built stylesheet immediately before the module script.
+ */
+function cssBeforeEntryModule() {
+  return {
+    name: "css-before-entry-module",
+    transformIndexHtml: {
+      order: "post",
+      handler(html) {
+        return html.replace(
+          /(<script[^>]*type="module"[^>]*><\/script>)\s*(<link[^>]*href="[^"]*assets\/[^"]+\.css"[^>]*>)/,
+          "$2\n  $1",
+        );
+      },
+    },
+  };
+}
+
 export default defineConfig({
   base: viteBase(),
   root: ".",
   publicDir: "public",
+  plugins: [cssBeforeEntryModule()],
   build: {
     outDir: "dist",
     emptyOutDir: true,

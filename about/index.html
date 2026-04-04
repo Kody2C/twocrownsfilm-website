@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&display=swap" rel="stylesheet" />
-  <script type="module" src="../src/main.js"></script>
+  <link rel="stylesheet" href="../src/style.css" />
 </head>
 <body class="page-about">
 
@@ -47,7 +47,12 @@
   </div>
 
   <header class="aboutpg-hero" aria-labelledby="aboutpg-hero-title">
-    <div class="aboutpg-hero__bg" role="img" aria-label=""></div>
+    <div
+      class="aboutpg-hero__bg"
+      role="img"
+      aria-label=""
+      style="background-image: url('../images/IMG_4887.jpg')"
+    ></div>
     <div class="aboutpg-hero__overlay" aria-hidden="true"></div>
     <div class="aboutpg-hero__inner fade-up">
       <p class="aboutpg-hero__eyebrow">Who we are</p>
@@ -72,10 +77,10 @@
   <div class="aboutpg-rule" aria-hidden="true"></div>
 
   <section class="aboutpg-strip aboutpg-strip--split-band" aria-labelledby="aboutpg-approach">
-    <div class="aboutpg-split">
+    <div class="aboutpg-split aboutpg-split--flip">
       <div class="aboutpg-split__media">
         <img
-          src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"
+          src="../images/IMG_4885.jpg"
           alt=""
           width="1200"
           height="800"
@@ -96,10 +101,10 @@
   </section>
 
   <section class="aboutpg-strip aboutpg-strip--split-band aboutpg-strip--alt" aria-labelledby="aboutpg-collab">
-    <div class="aboutpg-split aboutpg-split--flip">
+    <div class="aboutpg-split">
       <div class="aboutpg-split__media">
         <img
-          src="IMG_4885.jpg"
+          src="../images/26-01-21 - 26 - Roll 05 - Canon F1 (Old)_Kodak UltraMax 400 (35mm) - Frame 01 (CaptureOne Edited).JPEG"
           alt=""
           width="1200"
           height="800"
@@ -147,5 +152,6 @@
     </div>
   </footer>
 
+  <script type="module" src="../src/main.js"></script>
 </body>
 </html>

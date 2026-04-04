@@ -1,5 +1,3 @@
-import "./style.css";
-
 const nav = document.getElementById("nav");
 const menuBtn = document.getElementById("menuBtn");
 const menuOverlay = document.getElementById("menuOverlay");
