@@ -197,8 +197,10 @@ code {
 }
 
 .nav__brand-icon {
-  width: 32px;
   height: 32px;
+  width: auto;
+  max-width: 6.5rem;
+  aspect-ratio: 1024 / 483;
   object-fit: contain;
   flex-shrink: 0;
 }
@@ -207,6 +209,11 @@ code {
 .logo-on-light {
   filter: none;
   opacity: 0.96;
+}
+
+/* Gold mark PNG includes a black matte; lighten lets page color show through pure black */
+.logo-mark {
+  mix-blend-mode: lighten;
 }
 
 .nav__brand:hover .nav__brand-text {
@@ -735,8 +742,11 @@ code {
 }
 
 .hero__logo {
-  width: clamp(72px, 14vw, 120px);
+  width: clamp(140px, 28vw, 260px);
   height: auto;
+  max-width: min(100%, 320px);
+  aspect-ratio: 1024 / 483;
+  object-fit: contain;
   background: none;
   background-color: transparent;
   border: 0;
@@ -1184,6 +1194,8 @@ code {
   width: 42%;
   height: auto;
   max-width: 200px;
+  aspect-ratio: 1024 / 483;
+  object-fit: contain;
   background: none;
   background-color: transparent;
   border: 0;
@@ -1505,8 +1517,10 @@ code {
 }
 
 .footer__icon {
-  width: 28px;
   height: 28px;
+  width: auto;
+  max-width: 5.5rem;
+  aspect-ratio: 1024 / 483;
   object-fit: contain;
   flex-shrink: 0;
 }
