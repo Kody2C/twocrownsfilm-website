@@ -200,7 +200,7 @@ code {
   height: 32px;
   width: auto;
   max-width: 6.5rem;
-  aspect-ratio: 611 / 399;
+  aspect-ratio: 1024 / 483;
   object-fit: contain;
   flex-shrink: 0;
 }
@@ -740,7 +740,7 @@ code {
   width: clamp(140px, 28vw, 260px);
   height: auto;
   max-width: min(100%, 320px);
-  aspect-ratio: 611 / 399;
+  aspect-ratio: 1024 / 483;
   object-fit: contain;
   background: none;
   background-color: transparent;
@@ -1189,7 +1189,7 @@ code {
   width: 42%;
   height: auto;
   max-width: 200px;
-  aspect-ratio: 611 / 399;
+  aspect-ratio: 1024 / 483;
   object-fit: contain;
   background: none;
   background-color: transparent;
@@ -1515,7 +1515,7 @@ code {
   height: 28px;
   width: auto;
   max-width: 5.5rem;
-  aspect-ratio: 611 / 399;
+  aspect-ratio: 1024 / 483;
   object-fit: contain;
   flex-shrink: 0;
 }
