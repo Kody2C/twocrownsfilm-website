@@ -6,7 +6,13 @@ const menuLinks = document.querySelectorAll(".menu-link");
 
 const heroVideo = document.getElementById("heroVideo");
 if (heroVideo instanceof HTMLVideoElement) {
-  heroVideo.play().catch(() => {});
+  const tryPlay = () => {
+    heroVideo.muted = true;
+    heroVideo.play().catch(() => {});
+  };
+  heroVideo.addEventListener("loadeddata", tryPlay);
+  heroVideo.addEventListener("canplay", tryPlay);
+  tryPlay();
 }
 
 function openMenu() {
