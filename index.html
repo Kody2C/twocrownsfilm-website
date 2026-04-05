@@ -51,16 +51,19 @@
   <header class="hero strip strip--hero">
     <div class="hero__media">
       <div class="hero__video-host" aria-hidden="true">
-        <iframe
+        <video
           id="heroVideo"
-          class="hero__iframe"
+          class="hero__video"
           aria-hidden="true"
-          title=""
-          src="https://www.youtube.com/embed/ChnBKex5LYM?autoplay=1&mute=1&loop=1&playlist=ChnBKex5LYM&controls=0&modestbranding=1&playsinline=1&rel=0&iv_load_policy=3&disablekb=1&fs=0&cc_load_policy=0&start=14"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          loading="eager"
+          playsinline
+          muted
+          autoplay
+          loop
+          preload="auto"
           tabindex="-1"
-        ></iframe>
+        >
+          <source src="./videos/hero-reel.mov" type="video/quicktime" />
+        </video>
       </div>
       <div class="hero__overlay hero__overlay--light" aria-hidden="true"></div>
     </div>

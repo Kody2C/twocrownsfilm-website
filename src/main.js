@@ -4,6 +4,11 @@ const menuOverlay = document.getElementById("menuOverlay");
 const menuClose = document.getElementById("menuClose");
 const menuLinks = document.querySelectorAll(".menu-link");
 
+const heroVideo = document.getElementById("heroVideo");
+if (heroVideo instanceof HTMLVideoElement) {
+  heroVideo.play().catch(() => {});
+}
+
 function openMenu() {
   menuOverlay.classList.add("is-open");
   menuOverlay.setAttribute("aria-hidden", "false");
