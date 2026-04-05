@@ -197,9 +197,9 @@ code {
 }
 
 .nav__brand-icon {
-  height: 32px;
+  height: 26px;
   width: auto;
-  max-width: 6.5rem;
+  max-width: 5.25rem;
   aspect-ratio: 1024 / 483;
   object-fit: contain;
   flex-shrink: 0;
@@ -330,7 +330,7 @@ code {
 
 /* Scroll-parallax image grid behind CTA (We're ready when you are.) */
 .strip--cta-scroll {
-  --cta-band-h: clamp(24rem, 52vw, 34rem);
+  --cta-band-h: clamp(18rem, 40vw, 26rem);
   position: relative;
   overflow: hidden;
   background: #0a0a0a;
@@ -365,7 +365,7 @@ code {
 }
 
 .cta-scroll-bg__track img {
-  width: clamp(384px, 44vw, 592px);
+  width: clamp(280px, 32vw, 420px);
   height: 100%;
   min-height: 100%;
   object-fit: cover;
@@ -413,6 +413,17 @@ code {
   color: var(--text);
 }
 
+.strip--cta-scroll .cta-banner__sub {
+  max-width: none;
+}
+
+@media (min-width: 720px) {
+  .strip--cta-scroll .cta-banner__sub {
+    white-space: nowrap;
+    font-size: clamp(0.8125rem, 1.15vw, 0.9375rem);
+  }
+}
+
 @media (max-width: 640px) {
   .strip--cta-scroll .strip__inner.cta-banner {
     flex-direction: column;
@@ -427,7 +438,7 @@ code {
 
 @media (max-width: 520px) {
   .strip--cta-scroll {
-    --cta-band-h: clamp(18rem, 85vw, 26rem);
+    --cta-band-h: clamp(15rem, 72vw, 22rem);
   }
 }
 
