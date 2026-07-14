@@ -10,6 +10,8 @@
   <link rel="apple-touch-icon" href="./favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://player.vimeo.com" />
+  <link rel="preconnect" href="https://i.vimeocdn.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&display=swap" rel="stylesheet" />
   <!-- Link stylesheet in head so navigations paint styled; CSS was previously only imported from the deferred module. -->
   <link rel="stylesheet" href="./src/style.css" />
@@ -49,13 +51,33 @@
   </div>
 
   <header class="hero strip strip--hero">
+    <div class="hero__media">
+      <div class="hero__video-host" aria-hidden="true">
+        <iframe
+          id="heroVideo"
+          class="hero__iframe"
+          title="Two Crowns Film background reel"
+          src="https://player.vimeo.com/video/1082622652?h=c72cc6bbd0&amp;background=1&amp;autopause=0"
+          width="640"
+          height="360"
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+          allowfullscreen
+          loading="eager"
+          referrerpolicy="strict-origin-when-cross-origin"
+          tabindex="-1"
+        ></iframe>
+      </div>
+      <div class="hero__overlay hero__overlay--light" aria-hidden="true"></div>
+    </div>
+
     <div class="hero__body">
       <div class="hero__intro">
         <img src="./logo.png" alt="" class="hero__logo" width="1024" height="483" decoding="async" />
-        <p class="hero__kicker">Film/Video Editing &amp; Production</p>
-        <h1 class="hero__title">Cinematic Storytelling for <span class="hero__title-accent">ALL.</span></h1>
+        <p class="hero__kicker">Video and Documentary Production</p>
+        <h1 class="hero__title">Mission Focused Video Production</h1>
         <p class="hero__tagline">
-          Two Crowns Film partners with brands, artists, and creatives who care about shaping stories with a cinematic vision that deeply impacts viewers. We specialize in editing in all formats, creating documentaries, and more.
+          We help political organizations, faith-based nonprofits, and mission-focused businesses tell compelling stories that inspire action through films, documentaries, podcasts, social media content, event coverage, and more.
         </p>
         <div class="hero__actions">
           <a href="#work" class="btn-hero btn-hero--primary">See selected work</a>

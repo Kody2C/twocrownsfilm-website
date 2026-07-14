@@ -199,6 +199,48 @@ if (yearEl) {
   yearEl.textContent = String(new Date().getFullYear());
 }
 
+/** Reveal hero Vimeo by fading in from black once playback starts. */
+const heroIframe = document.getElementById("heroVideo");
+if (heroIframe) {
+  const revealHeroVideo = () => {
+    heroIframe.classList.add("is-ready");
+  };
+  const revealFallback = window.setTimeout(revealHeroVideo, 2800);
+
+  const bootHeroPlayer = () => {
+    if (!window.Vimeo?.Player) {
+      revealHeroVideo();
+      return;
+    }
+    try {
+      const player = new window.Vimeo.Player(heroIframe);
+      const onPlaying = () => {
+        window.clearTimeout(revealFallback);
+        revealHeroVideo();
+        player.off("playing", onPlaying);
+      };
+      player.on("playing", onPlaying);
+    } catch {
+      window.clearTimeout(revealFallback);
+      revealHeroVideo();
+    }
+  };
+
+  if (window.Vimeo?.Player) {
+    bootHeroPlayer();
+  } else {
+    const script = document.createElement("script");
+    script.src = "https://player.vimeo.com/api/player.js";
+    script.async = true;
+    script.onload = bootHeroPlayer;
+    script.onerror = () => {
+      window.clearTimeout(revealFallback);
+      revealHeroVideo();
+    };
+    document.head.appendChild(script);
+  }
+}
+
 /** Horizontal drift on the CTA image grid: scroll → subtle right-to-left motion */
 const ctaScrollTrack = document.getElementById("ctaScrollTrack");
 const ctaReadyStrip = document.getElementById("ctaReadyStrip");

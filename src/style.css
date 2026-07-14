@@ -197,9 +197,11 @@ code {
 }
 
 .nav__brand-icon {
-  height: 26px;
+  display: block;
+  height: 2rem;
   width: auto;
-  max-width: 5.25rem;
+  /* Override global img max-width:100% — it fights flex + fixed height and squashes the mark */
+  max-width: none;
   aspect-ratio: 1024 / 483;
   object-fit: contain;
   flex-shrink: 0;
@@ -688,8 +690,56 @@ code {
   flex-direction: column;
   padding-top: 5.75rem;
   padding-bottom: clamp(4.5rem, 11vw, 7.5rem);
-  background: #2a2a2a;
+  background: #000;
   color: var(--text);
+}
+
+.hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background: #000;
+}
+
+.hero__video-host {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: #000;
+}
+
+.hero__iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 56.25vw;
+  min-width: 177.77vh;
+  min-height: 100%;
+  max-width: none;
+  border: 0;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.9s var(--ease);
+  background: #000;
+}
+
+.hero__iframe.is-ready {
+  opacity: 1;
+}
+
+.hero__overlay--light {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 8, 10, 0.42) 0%,
+    rgba(8, 8, 10, 0.32) 45%,
+    rgba(6, 6, 8, 0.5) 100%
+  );
 }
 
 .hero__body {
@@ -1492,9 +1542,10 @@ code {
 }
 
 .footer__icon {
-  height: 28px;
+  display: block;
+  height: 2rem;
   width: auto;
-  max-width: 5.5rem;
+  max-width: none;
   aspect-ratio: 1024 / 483;
   object-fit: contain;
   flex-shrink: 0;
